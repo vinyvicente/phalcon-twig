@@ -1,2 +1,5 @@
 /cache/
 /config/development/
+
+/vendor/
+/.idea/

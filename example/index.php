@@ -1,21 +1,19 @@
-# phalcon-twig
+<?php
 
-## Requirements
+error_reporting(E_ALL);
 
-    PHP >= 5.6
-    Phalcon >= 3.x
+require __DIR__ . '/../vendor/autoload.php';
 
-## Install
+use Phalcon\Mvc\View;
+use Phalcon\Mvc\Application;
+use Phalcon\Loader;
 
-```
-composer require vinyvicente/phalcon-twig
-```
-
-### Configuration
-
-* Register in your DI configuration view, registering new view engine.
-
-```php
+try {
+    $loader = new Loader();
+    $loader->registerDirs([
+        __DIR__ . '/app/controllers/',
+    ]);
+    $loader->register();
 
     $di = new \Phalcon\Di\FactoryDefault();
 
@@ -33,10 +31,8 @@ composer require vinyvicente/phalcon-twig
         return $view;
     };
 
-```
-
-### Important
-
-    See Twig Docs: http://twig.sensiolabs.org/documentation
-
-Enjoy!
+    $app = new Application($di);
+    echo $app->handle()->getContent();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
