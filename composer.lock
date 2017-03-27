@@ -4,34 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b7e2e62f1657d4ac4ad1da2701a6a38c",
     "content-hash": "538b0660e9d31c588bdfaf22831c8f31",
     "packages": [
         {
             "name": "twig/twig",
-            "version": "v1.28.2",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b22ce0eb070e41f7cba65d78fe216de29726459c"
+                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b22ce0eb070e41f7cba65d78fe216de29726459c",
-                "reference": "b22ce0eb070e41f7cba65d78fe216de29726459c",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.7"
             },
             "require-dev": {
+                "psr/container": "^1.0",
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2@dev"
+                "symfony/phpunit-bridge": "~3.3@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.28-dev"
+                    "dev-master": "1.33-dev"
                 }
             },
             "autoload": {
@@ -66,22 +66,22 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-11-23 18:41:40"
+            "time": "2017-03-22T15:40:09+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "danielcosta/phalcon-stub",
-            "version": "3.0.1",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielcosta/phalcon-stub.git",
-                "reference": "19c58fe389337f7bc78948d0a2a85786d9337cf7"
+                "reference": "fbcc1786c1b18e157bc92228ab0962549cc1092c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielcosta/phalcon-stub/zipball/19c58fe389337f7bc78948d0a2a85786d9337cf7",
-                "reference": "19c58fe389337f7bc78948d0a2a85786d9337cf7",
+                "url": "https://api.github.com/repos/danielcosta/phalcon-stub/zipball/fbcc1786c1b18e157bc92228ab0962549cc1092c",
+                "reference": "fbcc1786c1b18e157bc92228ab0962549cc1092c",
                 "shasum": ""
             },
             "require": {
@@ -99,13 +99,13 @@
             ],
             "authors": [
                 {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/phalcon/phalcon-devtools/graphs/contributors"
+                },
+                {
                     "name": "Phalcon Team",
                     "email": "team@phalconphp.com",
                     "homepage": "http://phalconphp.com/en/team"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/phalcon/incubator/graphs/contributors"
                 },
                 {
                     "name": "Daniel Costa",
@@ -124,7 +124,7 @@
                 "phpstorm",
                 "stub"
             ],
-            "time": "2016-09-19 16:18:51"
+            "time": "2017-01-02T17:52:34+00:00"
         }
     ],
     "aliases": [],
