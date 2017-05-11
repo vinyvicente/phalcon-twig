@@ -3,8 +3,8 @@
     "description": "Twig View Handler to Phalcon PHP",
     "type": "library",
     "require": {
-        "php": ">=5.6",
-        "twig/twig": "^1.28"
+        "php": ">=5.6 || >=7.0",
+        "twig/twig": "^1.28 || ~2.0"
     },
     "require-dev": {
         "danielcosta/phalcon-stub": "^3.0"
