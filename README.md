@@ -1,5 +1,12 @@
 # phalcon-twig
 
+[![Latest Stable Version](https://poser.pugx.org/vinyvicente/phalcon-twig/v/stable)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+[![Total Downloads](https://poser.pugx.org/vinyvicente/phalcon-twig/downloads)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+[![License](https://poser.pugx.org/vinyvicente/phalcon-twig/license)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+[![Monthly Downloads](https://poser.pugx.org/vinyvicente/phalcon-twig/d/monthly)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+[![Daily Downloads](https://poser.pugx.org/vinyvicente/phalcon-twig/d/daily)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+[![composer.lock](https://poser.pugx.org/vinyvicente/phalcon-twig/composerlock)](https://packagist.org/packages/vinyvicente/phalcon-twig)
+
 ## Requirements
 
     PHP >= 5.6
