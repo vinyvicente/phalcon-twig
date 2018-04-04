@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c51f5d1d6c1bfb16bdaadc484b407ac",
+    "content-hash": "b65ecaf48e186d346385ebb3653a1353",
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.3.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/78be803ce01e55d3491c1397cf1c64beb9c1b63b",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -63,20 +63,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v2.3.2",
+            "version": "v2.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "85e8372c451510165c04bf781295f9d922fa524b"
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/85e8372c451510165c04bf781295f9d922fa524b",
-                "reference": "85e8372c451510165c04bf781295f9d922fa524b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7b604c89da162034bdf4bb66310f358d313dd16d",
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d",
                 "shasum": ""
             },
             "require": {
@@ -85,18 +85,21 @@
             },
             "require-dev": {
                 "psr/container": "^1.0",
-                "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.3@dev"
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -126,65 +129,57 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-21T00:13:02+00:00"
+            "time": "2018-04-02T09:24:19+00:00"
         }
     ],
     "packages-dev": [
         {
-            "name": "danielcosta/phalcon-stub",
-            "version": "3.1.2",
+            "name": "phalcon/ide-stubs",
+            "version": "v3.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/danielcosta/phalcon-stub.git",
-                "reference": "53e080f42ff2e578db29749aaf77bfe35e8e9db8"
+                "url": "https://github.com/phalcon/ide-stubs.git",
+                "reference": "fed301b552dd12d9428d0cc9dbae45d58ce42e56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielcosta/phalcon-stub/zipball/53e080f42ff2e578db29749aaf77bfe35e8e9db8",
-                "reference": "53e080f42ff2e578db29749aaf77bfe35e8e9db8",
+                "url": "https://api.github.com/repos/phalcon/ide-stubs/zipball/fed301b552dd12d9428d0cc9dbae45d58ce42e56",
+                "reference": "fed301b552dd12d9428d0cc9dbae45d58ce42e56",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phalcon\\": "Phalcon"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/phalcon/phalcon-devtools/graphs/contributors"
-                },
-                {
                     "name": "Phalcon Team",
                     "email": "team@phalconphp.com",
-                    "homepage": "http://phalconphp.com/en/team"
+                    "homepage": "https://phalconphp.com/en/team"
                 },
                 {
-                    "name": "Daniel Costa",
-                    "email": "danielcosta@gmail.com",
-                    "homepage": "http://danielcosta.info"
+                    "name": "Contributors",
+                    "homepage": "https://github.com/phalcon/ide-stubs/graphs/contributors"
                 }
             ],
-            "description": "The most complete Phalcon PHP stubs which allows autocomplete in modern IDEs",
+            "description": "The most complete Phalcon Framework IDE stubs library which enables autocompletion in modern IDEs.",
+            "homepage": "https://phalconphp.com",
             "keywords": [
+                "Devtools",
                 "Eclipse",
-                "Zend Studio",
                 "autocomplete",
                 "ide",
                 "netbeans",
                 "phalcon",
                 "phpstorm",
-                "stub"
+                "stub",
+                "stubs"
             ],
-            "time": "2017-04-09T21:57:20+00:00"
+            "time": "2018-02-26T23:55:17+00:00"
         }
     ],
     "aliases": [],
