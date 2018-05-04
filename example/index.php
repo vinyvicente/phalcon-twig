@@ -22,9 +22,19 @@ try {
         $view->setViewsDir('app/views/');
         $view->registerEngines([
             View\Engine\Twig::DEFAULT_EXTENSION => function ($view, $di) {
-                return new View\Engine\Twig($view, $di, [
-                    'cache' => __DIR__ . '/app/cache/',
-                ]);
+				
+				$loader = new \Twig_Loader_Filesystem($view->getViewsDir());
+				$environment = new \Twig_Environment($loader, [
+					'cache' => __DIR__ . '/app/cache/'
+				]);
+
+				// Add extensions, filter, functions and more here!
+                // $environment->addExtension(...);
+                // $environment->addFilter(...);
+				// $environment->addFunction(...);
+
+				return new \Phalcon\Mvc\View\Engine\Twig($view, $di, $environment);
+
             }
         ]);
 
