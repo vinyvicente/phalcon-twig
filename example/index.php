@@ -22,9 +22,17 @@ try {
         $view->setViewsDir('app/views/');
         $view->registerEngines([
             View\Engine\Twig::DEFAULT_EXTENSION => function ($view, $di) {
-                return new View\Engine\Twig($view, $di, [
+                $twig = new View\Engine\Twig($view, $di, [
                     'cache' => __DIR__ . '/app/cache/',
                 ]);
+
+                $environment = $twig->getEnvironment();
+
+                $environment->addExtension(new \Twig_Debug_Extension());
+                // $environment->addFunction(...);
+                // $environemnt->addFilter(...);
+
+                return $twig;
             }
         ]);
 

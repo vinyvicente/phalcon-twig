@@ -16,7 +16,7 @@ class Twig extends Engine implements EngineInterface
     /**
      * @var \Twig_Environment
      */
-    protected $twig;
+    protected $_environment;
 
     /**
      * @param mixed|\Phalcon\Mvc\ViewBaseInterface $view
@@ -28,7 +28,14 @@ class Twig extends Engine implements EngineInterface
         parent::__construct($view, $dependencyInjector);
 
         $loader = new \Twig_Loader_Filesystem($this->getView()->getViewsDir());
-        $this->twig = new \Twig_Environment($loader, $options);
+        $this->_environment = new \Twig_Environment($loader, $options);
+    }
+
+    /**
+     * @return \Twig_Environment
+     */
+    public function getEnvironment() {
+        return $this->_environment;
     }
 
     /**
@@ -42,7 +49,7 @@ class Twig extends Engine implements EngineInterface
             $params = [];
         }
 
-        $content = $this->twig->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
+        $content = $this->_environment->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
         if ($mustClean) {
             $this->getView()->setContent($content);
 
