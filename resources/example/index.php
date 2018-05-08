@@ -22,9 +22,14 @@ try {
         $view->setViewsDir('app/views/');
         $view->registerEngines([
             View\Engine\Twig::DEFAULT_EXTENSION => function ($view, $di) {
-                return new View\Engine\Twig($view, $di, [
+                $twig = new View\Engine\Twig($view, $di, [
                     'cache' => __DIR__ . '/app/cache/',
                 ]);
+
+                // customize as you want
+                // $twig->getEnvironment()->addExtension('');
+
+                return $twig;
             }
         ]);
 

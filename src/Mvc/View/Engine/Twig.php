@@ -13,36 +13,28 @@ class Twig extends Engine implements EngineInterface
 {
     const DEFAULT_EXTENSION = '.html.twig';
 
-    /**
-     * @var \Twig_Environment
-     */
-    protected $twig;
+    protected $environment;
 
-    /**
-     * @param mixed|\Phalcon\Mvc\ViewBaseInterface $view
-     * @param mixed|\Phalcon\DiInterface $dependencyInjector
-     * @param array $options
-     */
-    public function __construct($view, $dependencyInjector, array $options = [])
+    public function __construct($view, $dependencyInjector, array $environmentOptions = [])
     {
         parent::__construct($view, $dependencyInjector);
 
         $loader = new \Twig_Loader_Filesystem($this->getView()->getViewsDir());
-        $this->twig = new \Twig_Environment($loader, $options);
+        $this->environment = new \Twig_Environment($loader, $environmentOptions);
     }
 
-    /**
-     * @param string $path
-     * @param mixed $params
-     * @param bool $mustClean
-     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
     public function render($path, $params, $mustClean = false)
     {
         if (!$params) {
             $params = [];
         }
 
-        $content = $this->twig->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
+        $content = $this->environment->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
         if ($mustClean) {
             $this->getView()->setContent($content);
 
