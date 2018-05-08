@@ -16,24 +16,26 @@ class Twig extends Engine implements EngineInterface
     /**
      * @var \Twig_Environment
      */
-    protected $_twig;
+    protected $_environment;
 
     /**
      * @param mixed|\Phalcon\Mvc\ViewBaseInterface $view
      * @param mixed|\Phalcon\DiInterface $dependencyInjector
-     * @param mixed|\Twig_Environment $environment
+     * @param array $options
      */
-    public function __construct($view, $dependencyInjector, $environment = null, $options = [])
+    public function __construct($view, $dependencyInjector, array $environmentoOptions = [])
     {
         parent::__construct($view, $dependencyInjector);
 
-        if ($environment === null) {
-            $loader = new \Twig_Loader_Filesystem($this->getView()->getViewsDir());
-            $this->_twig = new \Twig_Environment($loader, $options);
-        } else {
-            $this->_twig = $environment;
-        }
-        
+        $loader = new \Twig_Loader_Filesystem($this->getView()->getViewsDir());
+        $this->_environment = new \Twig_Environment($loader, $options);
+    }
+
+    /**
+     * @return \Twig_Environment
+     */
+    public function getEnvironment() {
+        return $this->_environment;
     }
 
     /**
@@ -47,7 +49,7 @@ class Twig extends Engine implements EngineInterface
             $params = [];
         }
 
-        $content = $this->_twig->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
+        $content = $this->_environment->render(str_replace($this->getView()->getViewsDir(), '', $path), $params);
         if ($mustClean) {
             $this->getView()->setContent($content);
 
