@@ -23,7 +23,7 @@ class Twig extends Engine implements EngineInterface
      * @param mixed|\Phalcon\DiInterface $dependencyInjector
      * @param array $options
      */
-    public function __construct($view, $dependencyInjector, array $environmentoOptions = [])
+    public function __construct($view, $dependencyInjector, array $options = [])
     {
         parent::__construct($view, $dependencyInjector);
 
