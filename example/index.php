@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Loader;
@@ -15,7 +16,7 @@ try {
     ]);
     $loader->register();
 
-    $di = new \Phalcon\Di\FactoryDefault();
+    $di = new FactoryDefault();
 
     $di['view'] = function () {
         $view = new View();
