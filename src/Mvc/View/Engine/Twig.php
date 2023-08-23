@@ -1,40 +1,48 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phalcon\Mvc\View\Engine;
 
+use Phalcon\DiInterface;
 use Phalcon\Mvc\View\Engine;
 use Phalcon\Mvc\View\EngineInterface;
+use Phalcon\Mvc\ViewBaseInterface;
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use Twig\Loader\FilesystemLoader;
 
-/**
- * Class Twig
- * @package Phalcon\Mvc\View\Engine
- */
 class Twig extends Engine implements EngineInterface
 {
     const DEFAULT_EXTENSION = '.html.twig';
 
     /**
-     * @var \Twig_Environment
+     * @var Environment
      */
     protected $twig;
 
     /**
-     * @param mixed|\Phalcon\Mvc\ViewBaseInterface $view
-     * @param mixed|\Phalcon\DiInterface $dependencyInjector
+     * @param mixed|ViewBaseInterface $view
+     * @param mixed|DiInterface $dependencyInjector
      * @param array $options
      */
     public function __construct($view, $dependencyInjector, array $options = [])
     {
         parent::__construct($view, $dependencyInjector);
 
-        $loader = new \Twig_Loader_Filesystem($this->getView()->getViewsDir());
-        $this->twig = new \Twig_Environment($loader, $options);
+        $loader = new FilesystemLoader($this->getView()->getViewsDir());
+        $this->twig = new Environment($loader, $options);
     }
 
     /**
-     * @param string $path
-     * @param mixed $params
+     * @param $path
+     * @param $params
      * @param bool $mustClean
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function render($path, $params, $mustClean = false)
     {
